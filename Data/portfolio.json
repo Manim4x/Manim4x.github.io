@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Villa Verde",
+    "type": "Eco Home",
+    "year": "2024",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"
+  },
+  {
+    "title": "Eden Resort",
+    "type": "Green Hotel",
+    "year": "2023",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800"
+  },
+  {
+    "title": "Harmony Health",
+    "type": "Green Hospital",
+    "year": "2024",
+    "image": "https://images.unsplash.com/photo-1586776976031-76cf5d8d10f7?w=800"
+  },
+  {
+    "title": "Shanti Mandir",
+    "type": "Sacred Temple",
+    "year": "2025",
+    "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800"
+  }
+]
