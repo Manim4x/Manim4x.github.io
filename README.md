@@ -3,7 +3,6 @@
 Eco-friendly and sustainable construction company website.
 
 Live demo: https://manim4x.github.io/
-![Website Screenshot](screenshot.png)
 
 (Or after custom domain is connected: https://sathyamconstructions.net or whatever your domain is)
 
@@ -34,15 +33,5 @@ Data loaded from JSON files (services.json & portfolio.json)
 1. Download or clone this repository
 2. Open `index.html` in any modern browser (Chrome, Firefox, Edge, etc.)
    - No installation or server needed — just double-click the file!
-  
-   - 
-## Future improvements (ideas)
-
-- Add real form submission (Formspree or similar)
-- Lazy-load images
-- Add more portfolio projects
-- Connect custom domain (in progress)
-
-© 2026 Manivarthanan – Built for Sathyam Construction
 
 ## Folder structure
