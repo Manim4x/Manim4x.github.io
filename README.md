@@ -3,6 +3,7 @@
 Eco-friendly and sustainable construction company website.
 
 Live demo: https://manim4x.github.io/
+![Website Screenshot](screenshot.png)
 
 (Or after custom domain is connected: https://sathyamconstructions.net or whatever your domain is)
 
