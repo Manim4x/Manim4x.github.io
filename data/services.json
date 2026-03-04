@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Eco-Friendly Houses",
+    "description": "Sustainable homes designed with solar panels, rainwater harvesting, and natural ventilation.",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800"
+  },
+  {
+    "title": "Sustainable Hotels",
+    "description": "Luxurious hospitality spaces with energy-efficient systems and eco-materials.",
+    "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800"
+  },
+  {
+    "title": "Green Hospitals",
+    "description": "Healing environments with clean air, natural lighting, and low-energy operations.",
+    "image": "https://images.unsplash.com/photo-1586776976031-76cf5d8d10f7?w=800"
+  },
+  {
+    "title": "Sacred Temples",
+    "description": "Traditional architecture meets modern sustainability.",
+    "image": "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=800"
+  }
+]
