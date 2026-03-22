@@ -62,8 +62,8 @@ nav.scrolled .hamburger span{background:var(--dark)}
 /* HERO */
 #home{height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:#0D1208}
-.hero-bg::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=85') center/cover;opacity:.35;mix-blend-mode:luminosity}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(13,18,8,.93) 45%,rgba(13,18,8,.45) 100%)}
+.hero-bg::before{content:'';position:absolute;inset:0;background:url('SPBD/SPBD_1.jpg') center/cover;opacity:.98;mix-blend-mode:luminosity}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(74, 35, 20, 0.897) 45%,rgba(13,18,8,.45) 100%)}
 .hero-grid{position:absolute;inset:0;opacity:.035;background-image:linear-gradient(rgba(255,255,255,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.6) 1px,transparent 1px);background-size:70px 70px}
 .hero-particles{position:absolute;inset:0;overflow:hidden}
 .hero-particles span{position:absolute;width:2px;height:2px;background:var(--gold);border-radius:50%;animation:float linear infinite;opacity:0}
@@ -151,14 +151,15 @@ section{padding:110px 8%}
 .portfolio-filter{display:flex;gap:8px;margin:40px 0 50px;flex-wrap:wrap}
 .filter-btn{padding:9px 22px;font-size:.74rem;text-transform:uppercase;letter-spacing:.12em;border:1.5px solid var(--sand);background:transparent;color:var(--text-muted);cursor:pointer;transition:all .3s;font-family:'Outfit',sans-serif}
 .filter-btn.active,.filter-btn:hover{background:var(--brick);border-color:var(--brick);color:var(--white)}
-.portfolio-grid{columns:3;gap:16px}
-.portfolio-item{break-inside:avoid;margin-bottom:16px;position:relative;overflow:hidden;cursor:pointer;display:block}
-.portfolio-item img{width:100%;display:block;transition:transform .6s ease}
-.portfolio-item:hover img{transform:scale(1.05)}
-.portfolio-hover{position:absolute;inset:0;background:linear-gradient(135deg,rgba(139,58,42,.9),rgba(13,18,8,.85));opacity:0;transition:opacity .4s;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px}
-.portfolio-item:hover .portfolio-hover{opacity:1}
-.portfolio-hover-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--white);font-weight:600}
-.portfolio-hover-cat{font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.portfolio-item{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.portfolio-item:hover img{transform:scale(1.06)}
+.portfolio-hover{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,18,8,.92) 0%,rgba(13,18,8,.3) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px 22px}
+.portfolio-hover-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--white);font-weight:600;line-height:1.2}
+.portfolio-hover-cat{font-size:.7rem;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);margin-top:4px}
+.portfolio-hover-btn{display:inline-block;margin-top:14px;font-size:.68rem;text-transform:uppercase;letter-spacing:.15em;color:var(--white);border:1px solid rgba(255,255,255,.6);padding:7px 16px;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.portfolio-item:hover .portfolio-hover-btn{opacity:1;transform:translateY(0)}
 
 /* WHY US */
 #why{background:var(--sand);overflow:hidden}
@@ -331,6 +332,78 @@ footer{background:var(--dark);padding:70px 8% 30px}
   .project-type-grid{grid-template-columns:repeat(2,1fr)}
   .why-quote{right:0;bottom:-20px}
 }
+/* MD PROFILE */
+.md-section{background:var(--cream);padding:110px 8%;position:relative;overflow:hidden}
+.md-section::before{content:'LEADERSHIP';position:absolute;right:-2%;top:50%;transform:translateY(-50%);font-family:'Cormorant Garamond',serif;font-size:14vw;font-weight:800;color:rgba(139,58,42,.04);pointer-events:none}
+.md-profile-grid{display:grid;grid-template-columns:220px 1fr;gap:60px;align-items:start;margin-top:40px}
+.md-photo-wrap{position:relative}
+.md-photo-placeholder{width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,#c0a080,#8B6B50);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:rgba(255,255,255,.4)}
+.md-badge{position:absolute;bottom:-14px;right:-14px;background:var(--brick);color:var(--white);padding:12px 16px;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:500}
+.md-name{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--dark);line-height:1.1;margin:0 0 4px}
+.md-title{font-size:12px;text-transform:uppercase;letter-spacing:.2em;color:var(--gold);font-weight:500;margin:0 0 20px}
+.md-quote{border-left:3px solid var(--gold);margin:0 0 20px;padding:12px 18px;background:rgba(201,151,58,.07)}
+.md-quote p{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--dark);line-height:1.6;margin:0}
+.md-bio{font-size:14px;line-height:1.9;color:var(--text-muted);margin:0 0 20px}
+.md-credentials{display:flex;gap:16px;flex-wrap:wrap}
+.md-cred{display:flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid rgba(139,58,42,.2);font-size:12px;color:var(--text-muted)}
+.md-cred svg{flex-shrink:0}
+@media(max-width:768px){.md-profile-grid{grid-template-columns:1fr}.md-photo-wrap{max-width:220px}}
+/* PORTFOLIO POPUP */
+.portfolio-popup{position:fixed;inset:0;background:var(--white);z-index:990;transform:translateY(100%);transition:transform .5s cubic-bezier(.77,0,.175,1);overflow-y:auto;pointer-events:none}
+.portfolio-popup.open{transform:translateY(0);pointer-events:auto}
+#projectPopup{z-index:991}
+.popup-header{display:flex;align-items:center;justify-content:space-between;padding:24px 8%;border-bottom:1px solid var(--sand);position:sticky;top:0;background:var(--white);z-index:2}
+.popup-back{display:flex;align-items:center;gap:8px;font-size:.72rem;text-transform:uppercase;letter-spacing:.18em;color:var(--text-muted);cursor:pointer;background:none;border:none;font-family:'Outfit',sans-serif;transition:color .3s}
+.popup-back:hover{color:var(--brick)}
+.popup-back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.5}
+.popup-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:700;color:var(--dark)}
+.popup-close{width:36px;height:36px;border:1.5px solid var(--sand);background:none;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .3s;border-radius:2px}
+.popup-close:hover{background:var(--brick);border-color:var(--brick)}
+.popup-close:hover svg{stroke:var(--white)}
+.popup-close svg{width:16px;height:16px;stroke:var(--dark);fill:none;stroke-width:1.5}
+.popup-body{padding:50px 8%}
+.popup-count{font-size:.7rem;text-transform:uppercase;letter-spacing:.22em;color:var(--text-muted);margin-bottom:32px}
+.popup-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.popup-sub-item{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3}
+.popup-sub-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;display:block}
+.popup-sub-item:hover img{transform:scale(1.06)}
+.popup-sub-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(13,18,8,.5) 0%,transparent 60%);transition:background .4s}
+.popup-sub-item:hover .popup-sub-overlay{background:linear-gradient(to top,rgba(139,58,42,.92) 0%,rgba(13,18,8,.4) 60%,transparent 100%)}
+.popup-sub-content{position:absolute;bottom:0;left:0;right:0;padding:22px 20px}
+.popup-sub-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--white)}
+.popup-sub-loc{font-size:.68rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);margin-top:4px}
+.popup-view-btn{display:inline-block;margin-top:12px;font-size:.68rem;text-transform:uppercase;letter-spacing:.15em;color:var(--white);border:1px solid rgba(255,255,255,.5);padding:6px 14px;opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s}
+.popup-sub-item:hover .popup-view-btn{opacity:1;transform:translateY(0)}
+@media(max-width:768px){.popup-grid{grid-template-columns:repeat(2,1fr)}.popup-header{padding:18px 5%}.popup-body{padding:32px 5%}}
+@media(max-width:480px){.popup-grid{grid-template-columns:1fr}}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:1200;display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .3s}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox-img{max-width:90vw;max-height:90vh;object-fit:contain;display:block}
+.lightbox-close{position:absolute;top:20px;right:20px;background:none;border:none;cursor:pointer}
+.lightbox-close svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.5}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:none;border-radius:50%;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-nav svg{width:22px;height:22px;stroke:#fff;fill:none;stroke-width:1.5}
+.lightbox-prev{left:20px}
+.lightbox-next{right:20px}
+
+/* MD Placeholder */
+.md-photo-placeholder {
+  width: 270px;
+  height: 370px;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.md-photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;  /* Shows face, not chest */
+  display: block;
+}
 </style>
 </head>
 <body>
@@ -393,8 +466,8 @@ footer{background:var(--dark);padding:70px 8% 30px}
     </div>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num" data-count="450">0</div><div class="stat-label">Projects Built</div></div>
-    <div class="stat"><div class="stat-num" data-count="24">0</div><div class="stat-label">Years of Legacy</div></div>
+    <div class="stat"><div class="stat-num" data-count="200">0</div><div class="stat-label">Projects Built</div></div>
+    <div class="stat"><div class="stat-num" data-count="25">0</div><div class="stat-label">Years of Legacy</div></div>
     <div class="stat"><div class="stat-num" data-count="98">0</div><div class="stat-label">Happy Clients %</div></div>
   </div>
   <div class="hero-scroll"><div class="scroll-line"></div>scroll</div>
@@ -403,22 +476,22 @@ footer{background:var(--dark);padding:70px 8% 30px}
 <!-- MARQUEE -->
 <div class="marquee-wrap">
   <div class="marquee-track">
-    <span class="marquee-item"><span class="marquee-dot"></span>Luxury Residences</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Heritage Hotels</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Modern Hospitals</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Sacred Temples</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Red Brick Masonry</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Natural Stone Work</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Traditional Architecture</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Vastu Compliant</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Luxury Residences</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Heritage Hotels</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Modern Hospitals</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Sacred Temples</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Red Brick Masonry</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Natural Stone Work</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Traditional Architecture</span>
-    <span class="marquee-item"><span class="marquee-dot"></span>Vastu Compliant</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Traditional Houses</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Stabilized mud block Masonry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Arches, Domes and vaults</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Filler slab</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Lime plastering</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Natural stone Masonry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Aathangudi Tile flooring</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Bamboo Structures</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Traditional Houses</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Stabilized mud block Masonry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Arches, Domes and vaults</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Filler slab</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Lime plastering</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Natural stone Masonry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Aathangudi Tile flooring</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Bamboo Structures</span>
   </div>
 </div>
 
@@ -428,9 +501,9 @@ footer{background:var(--dark);padding:70px 8% 30px}
   <h2 class="section-title">Built on Trust,<br><em>Brick by Brick</em></h2>
   <div class="about-grid">
     <div class="about-img-stack reveal-left">
-      <img class="about-img-main" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Construction site">
-      <img class="about-img-sub" src="https://images.unsplash.com/photo-1590496793929-36417d3117de?w=500&q=80" alt="Brick detail">
-      <div class="about-badge"><span class="about-badge-num">24</span><span class="about-badge-text">Years Strong</span></div>
+      <img class="about-img-main" src="Eco_Thirvarur/Eco_T1.jpg" alt="Construction site">
+      <img class="about-img-sub" src="Eco_Thirvarur/Eco_T6.jpeg" alt="Brick detail">
+      <div class="about-badge"><span class="about-badge-num">25</span><span class="about-badge-text">Years Strong</span></div>
     </div>
     <div class="about-text reveal-right">
       <div class="section-tag">Our Story</div>
@@ -457,6 +530,39 @@ footer{background:var(--dark);padding:70px 8% 30px}
       </div>
     </div>
   </div>
+<!-- MD PROFILE -->
+<section class="md-section">
+  <div class="section-tag">Leadership</div>
+  <h2 class="section-title">The Vision <em>Behind the Build</em></h2>
+  <div class="md-profile-grid reveal">
+    <div class="md-photo-wrap">
+      <!-- Replace this div with an <img> tag once you have a photo -->
+      <div class="md-photo-placeholder"><img src="Prof/MD.jpeg" alt="Houses"></div>
+      <div class="md-badge">Managing Director</div>
+    </div>
+    <div style="padding-top:8px;">
+      <h3 class="md-name">M. Sathiyamoorthy</h3>
+      <p class="md-title">Founder & Managing Director · Est. 2001</p>
+      <blockquote class="md-quote">
+        <p>"We don't just build structures — we craft legacies that endure for generations."</p>
+      </blockquote>
+      <p class="md-bio">With over 24 years of experience in the construction industry, Mr. Sathiyamoorthy founded Sathiyam Constructions in 2001 with a vision to blend traditional craftsmanship with modern precision. Under his leadership, the company has delivered 500+ projects across residential, commercial, and heritage construction.</p>
+      <div class="md-credentials">
+        <div class="md-cred">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="1.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          B.Tech. Civil Engineering
+        </div>
+        <div class="md-cred">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Licensed Contractor
+        </div>
+        <div class="md-cred">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          25+ Years Experience
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- SERVICES -->
@@ -465,42 +571,42 @@ footer{background:var(--dark);padding:70px 8% 30px}
   <h2 class="section-title">Our <em>Specialisations</em></h2>
   <div class="services-grid">
     <div class="service-card reveal">
-      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Houses">
+      <img src="SPBD/SPBD_1.jpg" alt="Houses">
       <div class="service-overlay"></div>
       <div class="service-content">
         <div class="service-num">01</div>
         <div class="service-name">Eco-Friendly Houses</div>
-        <div class="service-desc">Handcrafted red-brick and natural stone residences that breathe tradition into every corner — with modern interiors and Vastu compliance.</div>
+        <div class="service-desc">Eco-friendly houses are homes designed and built using sustainable materials and energy-efficient methods that minimize harm to the environment, reducing carbon footprint and conserving natural resources like water and energy.</div>
         <div class="service-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></div>
       </div>
     </div>
     <div class="service-card reveal" style="transition-delay:.1s">
-      <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80" alt="Hotels">
+      <img src="redfox/Red_Fox_1.jpeg" alt="Hotels">
       <div class="service-overlay"></div>
       <div class="service-content">
         <div class="service-num">02</div>
-        <div class="service-name">Sustainable Hotels</div>
+        <div class="service-name">Hotels</div>
         <div class="service-desc">Boutique hotels and resorts that marry heritage aesthetics with modern hospitality — open courtyards, sloped tiled roofs, and raw stone facades.</div>
         <div class="service-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></div>
       </div>
     </div>
     <div class="service-card reveal" style="transition-delay:.2s">
-      <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Hospitals">
+      <img src="Church/Church_1.jpg" alt="Hospitals">
       <div class="service-overlay"></div>
       <div class="service-content">
         <div class="service-num">03</div>
-        <div class="service-name">Green Hospitals</div>
-        <div class="service-desc">Purpose-built healthcare facilities designed for patient well-being and operational excellence — sustainable, efficient, and compassionate spaces.</div>
+        <div class="service-name">Temples</div>
+        <div class="service-desc">Sacred structures built with devotion — following traditional Thachu Shastra principles, granite carvings, and time-honoured temple architecture.</div>
         <div class="service-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></div>
       </div>
     </div>
     <div class="service-card reveal" style="transition-delay:.3s">
-      <img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=80" alt="Temples">
+      <img src="Farm_house/Farmhouse_01.jpeg" alt="Temples">
       <div class="service-overlay"></div>
       <div class="service-content">
         <div class="service-num">04</div>
-        <div class="service-name">Sacred Temples</div>
-        <div class="service-desc">Sacred structures built with devotion — following traditional Thachu Shastra principles, granite carvings, and time-honoured temple architecture.</div>
+        <div class="service-name">Farm House</div>
+        <div class="service-desc">A farmhouse is a residential building located on agricultural or rural land, originally built to house farmers and their families while providing easy access to their fields and livestock.</div>
         <div class="service-arrow"><svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12,5 19,12 12,19"/></svg></div>
       </div>
     </div>
@@ -513,21 +619,20 @@ footer{background:var(--dark);padding:70px 8% 30px}
   <h2 class="section-title">Featured <em>Projects</em></h2>
   <div class="portfolio-filter">
     <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="homes">Homes</button>
+    <button class="filter-btn" data-filter="eco">Eco-Friendly House</button>
+    <button class="filter-btn" data-filter="residential">Residential</button>
     <button class="filter-btn" data-filter="hotels">Hotels</button>
-    <button class="filter-btn" data-filter="hospitals">Hospitals</button>
     <button class="filter-btn" data-filter="temples">Temples</button>
+    <button class="filter-btn" data-filter="farmhouse">Farm House</button>
   </div>
   <div class="portfolio-grid" id="portfolioGrid">
-    <div class="portfolio-item reveal" data-cat="homes"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80" alt="Home"><div class="portfolio-hover"><div class="portfolio-hover-title">Varma Heritage Villa</div><div class="portfolio-hover-cat">Homes · Thrissur</div></div></div>
-    <div class="portfolio-item reveal" data-cat="hotels"><img src="https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=600&q=80" alt="Hotel"><div class="portfolio-hover"><div class="portfolio-hover-title">Nila River Resort</div><div class="portfolio-hover-cat">Hotels · Palakkad</div></div></div>
-    <div class="portfolio-item reveal" data-cat="temples"><img src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&q=80" alt="Temple"><div class="portfolio-hover"><div class="portfolio-hover-title">Sree Dharma Temple</div><div class="portfolio-hover-cat">Temples · South India</div></div></div>
-    <div class="portfolio-item reveal" data-cat="hospitals"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80" alt="Hospital"><div class="portfolio-hover"><div class="portfolio-hover-title">MediCare Centre</div><div class="portfolio-hover-cat">Hospitals · Kochi</div></div></div>
-    <div class="portfolio-item reveal" data-cat="homes"><img src="https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80" alt="Home"><div class="portfolio-hover"><div class="portfolio-hover-title">Menon Stone Residence</div><div class="portfolio-hover-cat">Homes · Kannur</div></div></div>
-    <div class="portfolio-item reveal" data-cat="hotels"><img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80" alt="Hotel"><div class="portfolio-hover"><div class="portfolio-hover-title">Backwater Retreat</div><div class="portfolio-hover-cat">Hotels · Alappuzha</div></div></div>
+    <div class="portfolio-item reveal" data-cat="eco" onclick="openPortfolioPopup('eco')"><img src="Eco_Karappakam/ECO_KPM_Thumbnail.jpeg" alt="Eco House"><div class="portfolio-hover"><div class="portfolio-hover-title">Eco-Friendly House</div><div class="portfolio-hover-cat">Eco-Friendly House</div><div class="portfolio-hover-btn">View Projects</div></div></div>
+    <div class="portfolio-item reveal" data-cat="residential" onclick="openPortfolioPopup('residential')"><img src="Res_Moraiscity/Res_MC_12.jpeg" alt="Residence"><div class="portfolio-hover"><div class="portfolio-hover-title">Resedential</div><div class="portfolio-hover-cat">Residential</div><div class="portfolio-hover-btn">View Projects</div></div></div>
+    <div class="portfolio-item reveal" data-cat="hotels" onclick="openPortfolioPopup('hotels')"><img src="redfox/Red_Fox_thumbnail.jpeg" alt="Hotel"><div class="portfolio-hover"><div class="portfolio-hover-title">Hotels</div><div class="portfolio-hover-cat">Hotels</div><div class="portfolio-hover-btn">View Projects</div></div></div>
+    <div class="portfolio-item reveal" data-cat="temples" onclick="openPortfolioPopup('temples')"><img src="Church/Church_Thumbnail.jpg" alt="Temple"><div class="portfolio-hover"><div class="portfolio-hover-title">Temples</div><div class="portfolio-hover-cat">Temples · South India</div><div class="portfolio-hover-btn">View Projects</div></div></div>
+    <div class="portfolio-item reveal" data-cat="farmhouse" onclick="openPortfolioPopup('farmhouse')"><img src="Farm_house/Farmhouse_Thumbnail.jpeg" alt="Farmhouse"><div class="portfolio-hover"><div class="portfolio-hover-title">Farm House</div><div class="portfolio-hover-cat">Farm House · Madurai</div><div class="portfolio-hover-btn">View Projects</div></div></div>
   </div>
 </section>
-
 <!-- WHY US -->
 <section id="why">
   <div class="why-grid">
@@ -751,7 +856,7 @@ footer{background:var(--dark);padding:70px 8% 30px}
           <span>Submit Quote Request</span>
         </button>
         <p class="form-note">We'll respond to your request within 24–48 hours</p>
-        <div class="form-success" id="formSuccess">✓ Your quote has been sent to mani@gmail.com — we'll be in touch within 24–48 hours!</div>
+        <div class="form-success" id="formSuccess">✓ Your quote has been sent to <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="98f5f9f6f1d8fff5f9f1f4b6fbf7f5">[email&#160;protected]</a> — we'll be in touch within 24–48 hours!</div>
       </div>
     </div>
 
@@ -760,10 +865,10 @@ footer{background:var(--dark);padding:70px 8% 30px}
       <div class="qf-box">
         <div class="qf-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.21 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg></div>
         <div><strong>Call Us</strong><p>+91 82480 32960</p></div>
-      </div>
+        </div>
       <div class="qf-box">
         <div class="qf-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <div><strong>Email</strong><p>ersathiya@gmail.com</p></div>
+        <div><strong>Email</strong><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa9f88899b8e9293839bba9d979b9396d4999597">[email&#160;protected]</a></p></div>
       </div>
       <div class="qf-box">
         <div class="qf-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -784,13 +889,13 @@ footer{background:var(--dark);padding:70px 8% 30px}
     <div class="contact-right reveal-right">
       <div class="contact-box"><strong>Head Office</strong><p>20A, Pallivasal Street, Kulithalai, Karur, Tamil Nadu, 639104</p></div>
       <div class="contact-box"><strong>Phone &amp; WhatsApp</strong><p>+91 82480 32960</p></div>
-      <div class="contact-box"><strong>Email</strong><p>ersathiya@gmail.com</p></div>
+      <div class="contact-box"><strong>Email</strong><p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="82e7f0f1e3f6eaebfbe3c2e5efe3ebeeace1edef">[email&#160;protected]</a></p></div>
       <div class="contact-box"><strong>Working Hours</strong><p>Mon – Sat: 9:00 AM – 6:00 PM</p></div>
     </div>
   </div>
-  <iframe class="contact-map"
-    src="https://www.google.com/maps/search/20A,+Pallivasal+Street,+Kulithalai,+Karur,+Tamil+Nadu,+639104/@10.9162817,78.3675464,13z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI2MDMwMi4wIKXMDSoASAFQAw%3D%3D"
-    allowfullscreen="" loading="lazy">
+ <iframe class="contact-map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.5!2d78.4231138!3d10.9390126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baa45d353d83759%3A0x9a6cffdd3618b182!2sNOWFAL+TYRES!5e0!3m2!1sen!2sin!4v1"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </section>
 
@@ -833,8 +938,8 @@ footer{background:var(--dark);padding:70px 8% 30px}
       <ul>
         <li><a href="#">123 Green Valley Road, Chennai, Tamil Nadu 600001</a></li>
         <li><a href="tel:+919876543210">+91 98765 43210</a></li>
-        <li><a href="mailto:mani@gmail.com">mani@gmail.com</a></li>
-        <li><a href="mailto:info@sathiyamconstructions.com">info@sathiyamconstructions.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#731e121d1a33141e121a1f5d101c1e"><span class="__cf_email__" data-cfemail="620f030c0b22050f030b0e4c010d0f">[email&#160;protected]</span></a></li>
+        <li><a href="/cdn-cgi/l/email-protection#70191e161f30031104181909111d131f1e030402051304191f1e035e131f1d"><span class="__cf_email__" data-cfemail="6801060e07281b091c00011109050b07061b1c1a1d0b1c0107061b460b0705">[email&#160;protected]</span></a></li>
       </ul>
     </div>
   </div>
@@ -844,12 +949,48 @@ footer{background:var(--dark);padding:70px 8% 30px}
   </div>
 </footer>
 
+<!-- PORTFOLIO POPUP LEVEL 1 -->
+<div class="portfolio-popup" id="portfolioPopup">
+  <div class="popup-header">
+    <button class="popup-back" onclick="closePortfolioPopup()">
+      <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+      Portfolio
+    </button>
+    <div class="popup-title" id="popupTitle"></div>
+    <button class="popup-close" onclick="closePortfolioPopup()">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="popup-body">
+    <div class="popup-count" id="popupCount"></div>
+    <div class="popup-grid" id="popupGrid"></div>
+  </div>
+</div>
+
+<!-- PROJECT PHOTOS POPUP LEVEL 2 -->
+<div class="portfolio-popup" id="projectPopup">
+  <div class="popup-header">
+    <button class="popup-back" onclick="closeProjectPopup()">
+      <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+      Back
+    </button>
+    <div class="popup-title" id="projectPopupTitle"></div>
+    <button class="popup-close" onclick="closeProjectPopup()">
+      <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="popup-body">
+    <div class="popup-count" id="projectPopupCount"></div>
+    <div class="popup-grid" id="projectPopupGrid"></div>
+  </div>
+</div>
+
 <!-- FLOATING CTA -->
 <a href="#quote" class="float-cta" title="Get Quote">
   <svg viewBox="0 0 24 24" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
 </a>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // LOADER
 window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),2400));
 
@@ -939,7 +1080,118 @@ function submitQuote(){
   document.getElementById('formSuccess').classList.add('show');
   setTimeout(()=>document.getElementById('formSuccess').classList.remove('show'),7000);
 }
+// PORTFOLIO POPUP
+var _popupItems = [];
 
+var portfolioSubData = {
+  eco: {
+    label: 'Eco-Friendly House',
+    items: [
+      { img: 'SPBD/SPBD_Thumbnail.jpg', title: 'SPPD', loc: 'Thuraiyur', photos: ['SPBD/SPBD_1.jpg','SPBD/SPBD_2.jpg','SPBD/SPBD_3.jpg'] },
+      { img: 'Eco_Karappakam/ECO_KPM1.jpeg', title: 'Residential Karapakkam', loc: 'Karapakkam', photos: ['Eco_Karappakam/ECO_KPM1.jpeg','Eco_Karappakam/ECO_KPM2.jpeg','Eco_Karappakam/ECO_KPM3.jpeg','Eco_Karappakam/ECO_KPM4.jpeg','Eco_Karappakam/ECO_KPM5.jpeg',] },
+      { img: 'Eco_Thirupur/Eco_TPR1.jpeg', title: 'Residential Thirupur', loc: 'Thirupur', photos: ['Eco_Thirupur/Eco_TPR2.jpeg','Eco_Thirupur/Eco_TPR3.jpeg','Eco_Thirupur/Eco_TPR4.jpeg','Eco_Thirupur/Eco_TPR5.jpeg','Eco_Thirupur/Eco_TPR6.jpeg','Eco_Thirupur/Eco_TPR7.jpeg','Eco_Thirupur/Eco_TPR8.jpeg'] },
+      { img: 'Eco_Thirvarur/Eco_T1.jpg', title: 'Residential Thiruvarur', loc: 'Thiruvarur', photos: ['Eco_Thirvarur/Eco_T1.jpg','Eco_Thirvarur/Eco_T2.jpg','Eco_Thirvarur/Eco_T3.jpeg','Eco_Thirvarur/Eco_T4.jpeg','Eco_Thirvarur/Eco_T5.jpeg','Eco_Thirvarur/Eco_T6.jpeg'] },
+    ]
+  },
+  residential: {
+    label: 'Residential',
+    items: [
+      { img: 'Res_Moraiscity/Res_MC_12.jpeg', title: 'Morais City', loc: 'Trichy', photos: ['Res_Moraiscity/Res_MC_Thumbnail.jpeg','Res_Moraiscity/Res_MC_2.jpeg','Res_Moraiscity/Res_MC_3.jpeg','Res_Moraiscity/Res_MC_4.jpeg','Res_Moraiscity/Res_MC_5.jpeg','Res_Moraiscity/Res_MC_6.jpeg','Res_Moraiscity/Res_MC_7.jpeg','Res_Moraiscity/Res_MC_8.jpeg','Res_Moraiscity/Res_MC_9.jpeg','Res_Moraiscity/Res_MC_10.jpeg','Res_Moraiscity/Res_MC_11.jpeg','Res_Moraiscity/Res_MC_12.jpeg'] },
+    ]
+  },
+  hotels: {
+    label: 'Hotels',
+    items: [
+      { img: 'redfox/Red_Fox_1.jpeg', title: 'Red Fox', loc: 'Trichy', photos: ['redfox/Red_Fox_thumbnail.jpeg','redfox/Red_Fox_1.jpeg','redfox/Red_Fox_2.jpeg','redfox/Red_Fox_3.jpeg'] },
+      { img: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&q=80', title: 'Backwater Retreat', loc: 'Alappuzha', photos: ['https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80','https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=800&q=80','https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80'] },
+      { img: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80', title: 'Stone Courtyard Inn', loc: 'Pondicherry', photos: ['https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80','https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80','https://images.unsplash.com/photo-1586500036706-41963de24d8b?w=800&q=80'] },
+    ]
+  },
+  temples: {
+    label: 'Temples',
+    items: [
+      { img: 'Church/Church_Thumbnail.jpg', title: 'Church', loc: 'Ariyamangalam, Trichy', photos: ['Church/Church_1.jpg','Church/Church_2.jpg','Church/Church_3.jpg'] },
+      
+    ]
+  },
+  farmhouse: {
+    label: 'Farm House',
+    items: [
+      { img: 'Farm_house/Farmhouse_Thumbnail.jpeg', title: 'Farm House', loc: 'Modakurichi, Trichy', photos: ['Farm_house/Farmhouse_01.jpeg','Farm_house/Farmhouse_1.jpeg','Farm_house/Farmhouse_2.jpeg','Farm_house/Farmhouse_3.jpeg','Farm_house/Farmhouse_4.jpeg','Farm_house/Farmhouse_5.jpeg','Farm_house/Farmhouse_6.jpeg','Farm_house/Farmhouse_7.jpg','Farm_house/Farmhouse_8.jpg','Farm_house/Farmhouse_9.jpeg','Farm_house/Farmhouse_10.jpeg',] },
+    ]
+  }
+};
+// LEVEL 1 — open category popup
+function openPortfolioPopup(cat) {
+  var data = portfolioSubData[cat];
+  if (!data) return;
+  _popupItems = data.items;
+  document.getElementById('popupTitle').textContent = data.label;
+  document.getElementById('popupCount').textContent = data.items.length + ' Projects';
+  var html = '';
+  for (var i = 0; i < data.items.length; i++) {
+    var item = data.items[i];
+    html += '<div class="popup-sub-item" onclick="openSubPopup(' + i + ')">';
+    html += '<img src="' + item.img + '" alt="' + item.title + '">';
+    html += '<div class="popup-sub-overlay"></div>';
+    html += '<div class="popup-sub-content">';
+    html += '<div class="popup-sub-title">' + item.title + '</div>';
+    html += '<div class="popup-sub-loc">' + item.loc + '</div>';
+    html += '<div class="popup-view-btn">View Project</div>';
+    html += '</div></div>';
+  }
+  document.getElementById('popupGrid').innerHTML = html;
+  document.getElementById('portfolioPopup').scrollTop = 0;
+  document.getElementById('portfolioPopup').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closePortfolioPopup() {
+  document.getElementById('portfolioPopup').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// LEVEL 2 — open project photos popup
+function openSubPopup(index) {
+  var item = _popupItems[index];
+  if (!item) return;
+  _lightboxPhotos = item.photos;
+  document.getElementById('projectPopupTitle').textContent = item.title;
+  document.getElementById('projectPopupCount').textContent = item.photos.length + ' Photos';
+  var html = '';
+  for (var j = 0; j < item.photos.length; j++) {
+    html += '<div class="popup-sub-item" onclick="openLightbox(' + j + ')">';
+    html += '<img src="' + item.photos[j] + '" alt="' + item.title + '">';
+    html += '<div class="popup-sub-overlay"></div>';
+    html += '</div>';
+  }
+  document.getElementById('projectPopupGrid').innerHTML = html;
+  document.getElementById('projectPopup').scrollTop = 0;
+  document.getElementById('projectPopup').classList.add('open');
+}
+
+function closeProjectPopup() {
+  document.getElementById('projectPopup').classList.remove('open');
+}
+
+// LEVEL 3 — lightbox
+var _lightboxPhotos = [];
+var _lightboxIndex = 0;
+
+function openLightbox(index) {
+  _lightboxIndex = index;
+  document.getElementById('lightboxImg').src = _lightboxPhotos[index];
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function slideLightbox(dir) {
+  _lightboxIndex = (_lightboxIndex + dir + _lightboxPhotos.length) % _lightboxPhotos.length;
+  document.getElementById('lightboxImg').src = _lightboxPhotos[_lightboxIndex];
+}
 // ACTIVE NAV
 window.addEventListener('scroll',()=>{
   let cur='';
@@ -967,10 +1219,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">
+    <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" onclick="slideLightbox(-1)">
+    <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+  </button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-nav lightbox-next" onclick="slideLightbox(1)">
+    <svg viewBox="0 0 24 24"><polyline points="9,6 15,12 9,18"/></svg>
+  </button>
+</div>
 </body>
 </html>
-
-
-
-
-
